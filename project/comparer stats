@@ -1,0 +1,45 @@
+// tarzino 
+#include<stdio.h>
+struct card{
+    char name[30];
+    int matches;
+    int runs;
+    int inn;
+    int cent;
+    int half;
+    int six;
+    int four;
+    float avg;
+    
+    
+};
+int main(){
+    struct card p1;
+    int i,run[9],sum;
+    float avg10;
+    printf("enter the name of the player ");
+    fgets(p1.name,30,stdin);
+    printf("enter the number of matches");
+    scanf("%d",&p1.matches);
+    printf("enter the runs scored by player");
+    scanf("%d",&p1.runs);
+    printf("enter the number of innings played ");
+    scanf("%d",&p1.inn);
+    p1.avg=(p1.runs/p1.inn);
+    printf("the average is %f",p1.avg);
+    printf("\nenter the runs of recent 10 innings");
+    for(i=0;i<10;i++)
+    {scanf("%d",&run[i]);}
+    for(i=0;i<10;i++)
+    {sum+=run[i];}
+    avg10=(sum/10);
+    if(p1.avg-avg10>0){
+        printf("player current avg is low to his overall average");}
+    if(p1.avg-avg10<0){
+        printf("player current avg of recent 10 inning is high than to his overall avg");}
+    if(p1.avg-avg10==0){
+         printf("player current avg of recent 10 inning is equal to his overall avg");}
+    printf("\n Player has a difference of %f",p1.avg-avg10);
+    
+    return 0;
+}
